@@ -7,24 +7,9 @@
 
 <div class= "chat-messages">
   <!--メッセージ１-->
-  <div class= "user-date">
-    <div class= "name">Tom </div>
-    <div class= "date">2023/03/05(Sun) 11:59:11</div>
-  </div>
-  <div class= "message-date">
-    <div class= "message">おはよう</div>
-  </div>
-  <!--メッセージ２-->
-   <div class= "user-date">
-    <div class= "name">Jon </div>
-    <div class= "date">2023/03/06(Mon) 11:59:11</div>
-  </div>
-  <div class= "message-date">
-    <div class= "message">こんにちは</div>
-  </div>
-</div>
+  <%= render partial: 'message', collection: @messages %>
+</div>  
 
-<div class= "chat-form">
 <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
   <div class="form-input">
     <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
